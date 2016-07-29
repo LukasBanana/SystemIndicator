@@ -24,8 +24,6 @@ namespace SystemIndicator
 {
 
 
-/* --- Internal functions --- */
-
 template <typename T>
 static std::string ToString(const T& value)
 {
