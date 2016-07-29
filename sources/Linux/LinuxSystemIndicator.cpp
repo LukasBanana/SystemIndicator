@@ -1,5 +1,5 @@
 /*
- * SystemIndicator.cpp (Linux)
+ * LinuxSystemIndicator.cpp
  * 
  * This file is part of the "SystemIndicator" project (Copyright (c) 2016 by Lukas Hermanns)
  * See "LICENSE.txt" for license information.
@@ -8,20 +8,12 @@
 #include <SystemIndicator.h>
 #include <unistd.h>
 #include <sys/utsname.h>
-#include <sstream>
+#include "../Helper.h"
 
 
 namespace SystemIndicator
 {
 
-
-template <typename T>
-static std::string ToString(const T& value)
-{
-    std::stringstream s;
-    s << value;
-    return s.str();
-}
 
 static std::string QueryCompilerVersion()
 {

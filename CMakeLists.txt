@@ -17,6 +17,7 @@ set(PROJECT_TEST_DIR "${PROJECT_SOURCE_DIR}/test")
 # === Global files ===
 
 file(GLOB Headers "${PROJECT_SOURCE_DIR}/include/*.*")
+file(GLOB Sources "${PROJECT_SOURCE_DIR}/sources/*.*")
 
 if(WIN32)
 	file(GLOB SourcesPlatform "${PROJECT_SOURCE_DIR}/sources/Win32/*.*")
@@ -26,7 +27,7 @@ elseif(UNIX)
 	file(GLOB SourcesPlatform "${PROJECT_SOURCE_DIR}/sources/Linux/*.*")
 endif()
 
-set(FilesAll ${Headers} ${SourcesPlatform})
+set(FilesAll ${Headers} ${Sources} ${SourcesPlatform})
 
 
 # === Include directories ===
@@ -37,7 +38,7 @@ include_directories(${PROJECT_INCLUDE_DIR})
 # === Source groups ===
 
 source_group("Include" FILES ${Headers})
-source_group("Sources" FILES ${SourcesPlatform})
+source_group("Sources" FILES ${Sources} ${SourcesPlatform})
 
 
 # === Binaries ===

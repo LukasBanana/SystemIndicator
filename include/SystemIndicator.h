@@ -11,6 +11,7 @@
 
 #include <map>
 #include <string>
+#include <ostream>
 
 
 namespace SystemIndicator
@@ -63,6 +64,17 @@ typedef std::map<InformationEntry, std::string> InformationEntryMap;
 \return Map of all information entries available for the host system.
 */
 InformationEntryMap QueryInformation();
+
+/**
+\brief Outputs the specified entries in clearly arranged format.
+\see QueryInformation
+\remarks This can be used as shown in the following example:
+\code
+InformationEntryMap entries = QueryInformation();
+std::cout << entries;
+\endcode
+*/
+std::ostream& operator << (std::ostream& stream, InformationEntryMap entries);
 
 
 } // /namespace SystemIndicator

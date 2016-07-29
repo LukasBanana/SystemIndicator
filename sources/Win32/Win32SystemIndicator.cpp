@@ -1,5 +1,5 @@
 /*
- * SystemIndicator.cpp (Win32)
+ * Win32SystemIndicator.cpp
  * 
  * This file is part of the "SystemIndicator" project (Copyright (c) 2016 by Lukas Hermanns)
  * See "LICENSE.txt" for license information.
@@ -7,8 +7,8 @@
 
 #include <SystemIndicator.h>
 #include "ProcessorInfo.h"
+#include "../Helper.h"
 #include <Windows.h>
-#include <sstream>
 #include <vector>
 #include <array>
 
@@ -23,14 +23,6 @@
 namespace SystemIndicator
 {
 
-
-template <typename T>
-static std::string ToString(const T& value)
-{
-    std::stringstream s;
-    s << value;
-    return s.str();
-}
 
 static DWORD QueryProcessorSpeed()
 {

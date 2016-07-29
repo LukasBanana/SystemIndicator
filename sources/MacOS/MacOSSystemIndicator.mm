@@ -1,5 +1,5 @@
 /*
- * SystemIndicator.mm (MacOS)
+ * MacOSSystemIndicator.mm
  * 
  * This file is part of the "SystemIndicator" project (Copyright (c) 2016 by Lukas Hermanns)
  * See "LICENSE.txt" for license information.
