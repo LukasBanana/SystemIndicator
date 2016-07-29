@@ -46,12 +46,7 @@ static void QueryKernelInfo(std::string& version, std::string& machine)
     utsname name;
     if (uname(&name) == 0)
     {
-        version = std::string(name.sysname);
-        version += ' ';
-        version += std::string(name.release);
-        version += ' ';
-        version += std::string(name.version);
-        
+        version = std::string(name.sysname) + ' ' + std::string(name.release) + " (" + std::string(name.version) + ")";
         machine = std::string(name.machine);
     }
     else
@@ -81,6 +76,7 @@ InformationEntryMap QueryInformation()
     /* Setup output entries */
     InformationEntryMap info;
     
+    AddEntry(info, ENTRY_OS_FAMILY, "LINUX");
     AddEntry(info, ENTRY_OS_NAME, version);
     AddEntry(info, ENTRY_COMPILER, QueryCompilerVersion());
     AddEntry(info, ENTRY_CPU_ARCH, machine);

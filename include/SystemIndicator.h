@@ -20,6 +20,7 @@ namespace SystemIndicator
 //! Entry enumeration of all available system information.
 enum InformationEntry
 {
+    ENTRY_OS_FAMILY,            //!< Identifier of the operating system family, either "WIN32", "LINUX", or "MACOSX".
     ENTRY_OS_NAME,              //!< Name and version of the operating system, e.g. "Microsoft Windows 10 Home Edition Service Pack 1 (6100)".
     ENTRY_COMPILER,             //!< Name and version of the compiler used to compile this library, e.g. "Microsoft VisualC++ 2015 (14.0)".
 

@@ -32,6 +32,7 @@ int main()
 {
     InformationEntryMap desc = QueryInformation();
 
+    SHOW( ENTRY_OS_FAMILY );
     SHOW( ENTRY_OS_NAME );
     SHOW( ENTRY_COMPILER );
 
