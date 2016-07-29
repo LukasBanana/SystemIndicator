@@ -451,23 +451,23 @@ InformationEntryMap QueryInformation()
     info[ ENTRY_CPU_ARCH           ] = QueryCPUArchitecture();
     info[ ENTRY_CPU_EXT            ] = QueryCPUExtensions(cpuInfo);
 
-    info[ ENTRY_PROCESSORS         ] = std::to_string(cpuInfo2.numCores);
-    info[ ENTRY_LOGICAL_PROCESSORS ] = std::to_string(cpuInfo2.numLogicalCores);
-    info[ ENTRY_PROCESSOR_SPEED    ] = std::to_string(QueryProcessorSpeed());
+    info[ ENTRY_PROCESSORS         ] = ToString(cpuInfo2.numCores);
+    info[ ENTRY_LOGICAL_PROCESSORS ] = ToString(cpuInfo2.numLogicalCores);
+    info[ ENTRY_PROCESSOR_SPEED    ] = ToString(QueryProcessorSpeed());
 
-    info[ ENTRY_L1CACHES           ] = std::to_string(cpuInfo2.caches[0].count);
-    info[ ENTRY_L1CACHE_SIZE       ] = std::to_string(cpuInfo2.caches[0].size / divKB);
-    info[ ENTRY_L1CACHE_LINE_SIZE  ] = std::to_string(cpuInfo2.caches[0].lineSize);
+    info[ ENTRY_L1CACHES           ] = ToString(cpuInfo2.caches[0].count);
+    info[ ENTRY_L1CACHE_SIZE       ] = ToString(cpuInfo2.caches[0].size / divKB);
+    info[ ENTRY_L1CACHE_LINE_SIZE  ] = ToString(cpuInfo2.caches[0].lineSize);
 
-    info[ ENTRY_L2CACHES           ] = std::to_string(cpuInfo2.caches[1].count);
-    info[ ENTRY_L2CACHE_SIZE       ] = std::to_string(cpuInfo2.caches[1].size / divKB);
-    info[ ENTRY_L2CACHE_LINE_SIZE  ] = std::to_string(cpuInfo2.caches[1].lineSize);
+    info[ ENTRY_L2CACHES           ] = ToString(cpuInfo2.caches[1].count);
+    info[ ENTRY_L2CACHE_SIZE       ] = ToString(cpuInfo2.caches[1].size / divKB);
+    info[ ENTRY_L2CACHE_LINE_SIZE  ] = ToString(cpuInfo2.caches[1].lineSize);
 
     if (cpuInfo2.caches[2].count > 0)
     {
-        info[ ENTRY_L3CACHES          ] = std::to_string(cpuInfo2.caches[2].count);
-        info[ ENTRY_L3CACHE_SIZE      ] = std::to_string(cpuInfo2.caches[2].size / divKB);
-        info[ ENTRY_L3CACHE_LINE_SIZE ] = std::to_string(cpuInfo2.caches[2].lineSize);
+        info[ ENTRY_L3CACHES          ] = ToString(cpuInfo2.caches[2].count);
+        info[ ENTRY_L3CACHE_SIZE      ] = ToString(cpuInfo2.caches[2].size / divKB);
+        info[ ENTRY_L3CACHE_LINE_SIZE ] = ToString(cpuInfo2.caches[2].lineSize);
     }
 
     info[ ENTRY_TOTAL_MEMORY       ] = totalMem;
