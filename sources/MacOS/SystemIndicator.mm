@@ -12,6 +12,15 @@ namespace SystemIndicator
 {
 
 
+InformationEntryMap QueryInformation()
+{
+    /* Setup output entries */
+    InformationEntryMap info;
+
+    info[ ENTRY_OS_FAMILY ] = "MACOS";
+
+    return info;
+}
 
 
 } // /namespace SystemIndicator
