@@ -441,6 +441,7 @@ InformationEntryMap QueryInformation()
     /* Setup output entries */
     InformationEntryMap info;
 
+    info[ ENTRY_OS_FAMILY          ] = "WIN32";
     info[ ENTRY_OS_NAME            ] = QueryOSName();
     info[ ENTRY_COMPILER           ] = QueryCompilerVersion();
 
